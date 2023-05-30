@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="text-center text-white">
+        <h1 class="mb-5">Grass Species Entry</h1>
+    </div>
+    <!--Form for entry of grass type and need data-->
+    <form action="/entry" id="entry" method="post">
+        <div class="row">
+            <div class="col-auto">
+                <input id="grass" name="grass" type="text" placeholder="Type Of Grass">
+            </div>
+            <div class="col-auto">
+                <select autocomplete="off" autofocus id="temp" name="temp" placeholder="Grass Temp">
+                    <option autofocus disabled selected>Select the ideal temp of grass species</option>
+                    <option>Warm</option>
+                    <option>Cool</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <select id="height" name="height" type="numeric" placeholder="Ideal Mow Height">
+                    <option autofocus disabled selected>Select Range of Mow Height In Inches</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <select id="water" name="water" type="numeric" placeholder="Ideal Amount of Water in Inches">
+                    <option>.25</option>
+                    <option>.5</option>
+                    <option>.75</option>
+                    <option>1</option>
+                    <option>1.25</option>
+                    <option>1.5</option>
+                    <option>1.75</option>
+                    <option>2</option>
+                </select>
+            </div>
+            <button class="btn btn-primary btn-lg" id="grass-submit" type="submit">Submit</button>
+        </div>
+    </form>
+
+    {% block entered %}{% endblock %}
+{% endblock %}

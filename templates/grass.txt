@@ -1,0 +1,9 @@
+CREATE TABLE grass (
+    id INTEGER NOT NULL PRIMARY KEY,
+    grass_type TEXT NOT NULL,
+    temp TEXT NOT NULL,
+    mow_height INTEGER NOT NULL,
+    optimal_water INTEGER NOT NULL
+);
+
+INSERT INTO grass (grass_type, temp, mow_height, optimal water) VALUES (?, ?, ?, ?);

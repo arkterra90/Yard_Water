@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="text-center text-white">
+    <!-- Page heading-->
+    <h1 class="mb-5">How much water does your yard need to stay healthy?</h1>
+
+    <form class="form-subscribe" action="/" id="zipcode" method="post">
+        <!-- zipcode and water amount selection-->
+        <div class="row">
+            <div class="col">
+                <select autocomplete="off" autofocus class="form-control mx-auto w-auto" id="grass_name" name="grass_type">
+                    <option autofocus disabled selected>Select Your Grass Species</option>
+                    {% for i in grass_name %}
+                    <option>{{ i.grass_type }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-auto">
+                <select autocomplete="off" autofocus class="form-control mx-auto w-auto" id="water_amount" name="water_amount" placeholder="Water Amount">
+                    <option autofocus disabled selected>Select How Much You Would Like To Water</option>
+                    <option>Max</option>
+                    <option>Optimal</option>
+                    <option>Minimum</option>
+                </select>
+            </div>
+            <p></p>
+            <hr>
+            <div class="col">
+                <input class="form-control form-control-lg" id="zip" name="zip" type="numeric" placeholder="Zip Code">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+            </div>
+        </div>
+        <hr>
+
+    </form>
+</div>
+
+{% endblock %}
