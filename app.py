@@ -29,13 +29,14 @@ def index():
         grass_name = db.execute("SELECT DISTINCT grass_type FROM grass;")
 
         # API calls to return rain amount for users given zipcode
+        # lookup and rain functions pulled from functions.py 
         location = lookup(zipcode)
 
         rain_sum = rain(location)
 
         if location != None and rain_sum != None:
 
-
+            # SQL query to return user information based on their grass type selection
             grass_stats = db.execute("SELECT * FROM grass WHERE grass_type=?;", grass)
             grass_type = grass_stats[0]['grass_type']
             temp = grass_stats[0]['temp']
